@@ -1,7 +1,9 @@
+Supplemental
+-------
 
-<strong>These tools are optional and not needed to run any Basestack feature</strong>
-
-<strong>They are not bundled within Basestack (supplemental to bioinformatic/genomics analysis) and must be downloaded separately. They are (mainly) discussed in the bioinformatics modules of the workshop provided with Basestack</strong>
+.. note::
+    These tools are optional and not needed to run any Basestack feature
+    They are not bundled within Basestack (supplemental to bioinformatic/genomics analysis) and must be downloaded separately. They are (mainly) discussed in the bioinformatics modules of the workshop provided with Basestack
 
 
 * BEAST v1.10.4: 
@@ -41,7 +43,7 @@ build from source (instructions)
 	- http://tree.bio.ed.ac.uk/software/figtree/
 	- Available in all 3 OS Types
 
-<strong>Requires Internet. Also available at https://igv.org/app/</strong>
+Requires Internet. Also available at https://igv.org/app/
 
 * IQTree v2.1.1
 	- https://github.com/iqtree/iqtree2/releases
@@ -61,5 +63,3 @@ build from source (instructions)
 * biopython
 	- https://biopython.org/wiki/Download
 	- Install after installing/updating Python
-
-<strong>These tools are optional and not needed to run any Basestack feature</strong>

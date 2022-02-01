@@ -6,8 +6,8 @@ project = 'Basestack'
 copyright = '2022, Basestack'
 author = 'Brian Merritt'
 
-release = '2.0'
-version = '2.0.0'
+release = '1.1.5'
+version = '1.1.5'
 
 # -- General configuration
 

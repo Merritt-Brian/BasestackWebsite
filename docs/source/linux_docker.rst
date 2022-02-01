@@ -1,20 +1,22 @@
 
 
-## 1. Installing Docker
+Docker
+--------
 
-<a href="https://docs.docker.com/engine/install/#server">Install Docker for Linux</a>
+
+
+Instructions
+#######
+
+Install `Docker <https://docs.docker.com/engine/install/#server>`_
+
+
 
 Make sure that you select the appropriate distribution for your machine. If you are unsure of your distribution use `lsb_release -a` from the command line to check your distro.
 
-![Step 1]({{site.baseurl}}/assets/img/release_distro.png "Title")
+.. image:: ../assets/img/release_distro.png
+   :width: 600
 
-{% include_relative check_docker_support.md %}
-
-<br>
-<hr>
-<br>
-
-## 2. Setting Up Configurations on Ubuntu
 
 Choose **ONE** option
 
@@ -55,9 +57,9 @@ Choose **ONE** option
 
 Open a terminal and type `docker info`. You should see information about your `docker` service
 
-![Step 1]({{site.url}}/assets/img/docker_info.png "Title")
+.. image:: ../assets/img/docker_info.png
+   :width: 600
 
-### Note:
 
 **Rootful**:
 - `/var/lib/docker` is the Docker Root Dir. YOU MUST correctly utilize the `userns-remap` configuration described above for this to work
@@ -67,13 +69,28 @@ Open a terminal and type `docker info`. You should see information about your `d
 
 Additionally, for Docker Rootless only, you'll need to adjust the socket that Basestack is connecting to directly within the System tab of the application. This value will be wherever your `docker.sock` file is made. 
 
-![Step 1]({{site.baseurl}}/assets/img/change_socket.png "Title")
 
-If you're unsure where that is run: `docker context ls` and it will be the DOCKER ENDPOINT value sans the `unix://` 
-
-![Step 1]({{site.baseurl}}/assets/img/docker_context_ls.png "Title")
+.. image:: ../assets/img/change_socket.png
+   :width: 600
 
 
-{% include_relative install_module.md %}
+If you're unsure where that is run: ``docker context ls`` and it will be the DOCKER ENDPOINT value sans the ``unix://`` 
+
+.. image:: ../assets/img/docker_context_ls.png
+   :width: 600
+
+Basestack
+-------
 
 
+Install Main
+######
+
+
+Download Basestack from `Releases <"https://github.com/Merritt-Brian/Basestack/releases">`_
+
+- You will select the item labeled (``<Basestack-Version>.AppImage``)
+
+1. Double-click ``<Basestack-Version>.AppImage``
+2. Follow the prompts for installing the software. Choose defaults unless otherwise needed.
+3. chmod ugo+x ``<Basestack-Version>.dmp``

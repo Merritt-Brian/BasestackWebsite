@@ -1,5 +1,10 @@
+Docker
+------------
 
+.. _windows_docker.rst
 
+Windows Docker Install
+------------
 
 ## 1. Install [Docker](https://docs.docker.com/docker-for-windows/install/) 
 
@@ -139,12 +144,4 @@ If you'd like a new install location specify here. You will need to supply this 
 	- [Mytax](https://github.com/tmehoke/mytax)
 
 </details>
-
-
-<br>
-<hr>
-<br>
-
-{% include_relative install_module.md %}
-
 
