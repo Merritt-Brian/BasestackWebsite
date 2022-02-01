@@ -2,6 +2,9 @@ Basestack
 =======================================
 
 
+General
+----------------
+
 .. image:: docs/assets/img/homepage.png
    :width: 600
 
@@ -17,13 +20,19 @@ Please follow the sidebar links to review both installation steps for your distr
 
 Basestack's recent releases can be found at: https://github.com/jhuapl-bio/Basestack/releases/
 
-
-
-
-
 Future Architecture for Consensus Generation
 
 .. image:: docs/assets/img/Current_Future_Architecture_Basestack.jpg
    :width: 600
 
 
+Development (Local Builds)
+----------------
+
+```
+
+conda env create -f environment.yml
+conda activate basestack-website-dev
+sphinx-autobuild -a docs/source docs/_build/html --watch docs
+
+```
