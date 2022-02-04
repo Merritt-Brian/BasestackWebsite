@@ -1,4 +1,5 @@
-
+Mytax
+======
 
 `Mytax <https://github.com/jhuapl-bio/mytax>`_ is a tool designed to utilize the `Kraken2 <https://ccb.jhu.edu/software/kraken2/>` classification tool in order to identify (and visualize) taxonomic designations of fastq files. It includes a flu-kraken (from JHUAPL) and minikraken (from developers of kraken) set of databases in the installed images. 
 
