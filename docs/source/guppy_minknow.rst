@@ -1,4 +1,4 @@
-Guppy_Minknow
+Guppy Minknow
 -------
 
 MinKNOW
@@ -63,7 +63,7 @@ If both commands return a healthy output, you are all set on CUDA.
 
 
 
-Setup MinKNOW with Guppy GPU Basecaller
+Guppy GPU Basecaller
 ####
 
 Finally, you need to configure MinKNOW to use a GPU-capable version of guppy and that the guppy basecaller plays nice with the installed MinKNOW you've pulled. 

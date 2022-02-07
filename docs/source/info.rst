@@ -1,4 +1,4 @@
-Special_Mentions
+Special Mentions
 --------
 
 Mentions
