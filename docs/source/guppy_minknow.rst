@@ -61,7 +61,23 @@ Once installed you can confirm that it is working by writing:
 
 If both commands return a healthy output, you are all set on CUDA.
 
+Barcoding Kits Missing
+####
 
+Newer installs of Minknow will not render barcoding kits appropriately on starting an analysis or sequencing run. To remedy, you must fix 2-3 files
+
+
+1. ``sudo nano /opt/ont/minknow/conf/app_conf`` and replace ``use_tcp`` to ``true``
+2. ``sudo systemctl edit guppyd.service`` and replace ``--port`` with ``5555`` and add ``--use_tcp``
+3. ``sudo nano /etc/systemd/system/guppyd.service.d/override.conf`` and replace ``--port`` with ``5555`` and add ``--use_tcp``
+4. Finally, run ``sudo systemctl daemon-reload`` to make changes. 
+
+.. note::
+   Latest Installs of MinKNOW break GPU-basecalling. There is no fix (we've) discovered that allows it to perform within MinKNOW directly
+
+
+.. note::
+    ``/etc/systemd/system/guppyd.service.d/override.conf`` may not exist on your system and won't be needed to be changed
 
 Guppy GPU Basecaller
 ####
