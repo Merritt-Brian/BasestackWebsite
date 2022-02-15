@@ -90,18 +90,18 @@ Finally, you need to configure MinKNOW to use a GPU-capable version of guppy and
 ::
     /opt/ont/minknow/guppy/bin/guppy_basecaller --version
 
-You should see a version, for example for 5.0.13. You MUST download the same version by running:
+You should see a version, for example for 5.0.13. In MinKNOW ``21.11`` it should be around ``5.1.15`` You MUST download the same version by running:
 
 ``wget https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy_<version>_linux64.tar.gz``
 
 
-Make sure to replace the installed version with the values after ``ont-guppy_`` e.g. ``wget https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy_5.0.13_linux64.tar.gz``
+Make sure to replace the installed version with the values after ``ont-guppy_`` e.g. ``wget https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy_5.1.15_linux64.tar.gz``
 
 
 Then, we need to replace the guppy version. Let's first save the cpu-only one before replacing as well. 
 ::
     sudo mv /opt/ont/guppy/bin /opt/ont/guppy/bin.sav  &&    sudo mv /opt/ont/guppy/data /opt/ont/guppy/data.sav      # Save the old guppy just in case
-    tar -xvzf ont-guppy_5.0.13_linux64.tar.gz #Decompress guppy. Replace the version number with your own
+    tar -xvzf ont-guppy_5.1.15_linux64.tar.gz #Decompress guppy. Replace the version number with your own
     sudo cp -r ont-guppy/bin /opt/ont/guppy/bin && sudo cp -r ont-guppy/data /opt/ont/guppy/data # Move the newly downloaded guppy
     #Disable online need for minknow to ping external servers
     sudo /opt/ont/minknow/bin/config_editor --filename /opt/ont/minknow/conf/sys_conf --conf system --set on_acquisition_ping_failure=ignore
@@ -130,6 +130,7 @@ Then, add these two lines to your `$HOME/.bashrc`
     ``sudo systemctl edit guppyd.service --full``
 
     Ensure that, if it exists, the override conf doesn't override our changes 
+    
     ``sudo mv /etc/systemd/system/guppyd.service.d/override.conf /etc/systemd/system/guppyd.service.d/override.conf.old``
 
     2. Edit that new service file to point to your GPU version of guppy, and add the appropriate device flag. You can change any other server arguments at the same time.
@@ -181,4 +182,39 @@ If you ever experience issues where the UI does not show experiments once starte
 3. Make sure that a MinION or other Oxford Nanopore devices is plugged in and running
 4. Restart MinKNOW (UI)
 5. Re-attempt experiment such as basecalling. Often times experiments will then show up
+
+
+Reduce Runners if GPU basecalling fails
+#####
+
+.. note::
+
+    See `here <https://community.nanoporetech.com/protocols/experiment-companion-minknow/v/mke_1013_v1_revbz_11apr2016/installing-gpu-version-of-guppy-with-minknow-for-minion>`_
+
+Occasionally, if you've set up GPU basecalling correctly, but still get errors, this may be due to too many runners being called. You can adjust this 
+easily in the ``app_conf`` file. Adjust the ``"chunks_per_runner"`` parameter
+
+- If using HAC, set it to ``"chunks_per_runner": 160``
+- If using SUP, set it to ``"chunks_per_runner": 10``
+
+Running Command-line GPU Basecalling
+####
+
+.. note::
+    Ensure you've installed a GPU compatible variant by following `Guppy GPU Basecaller`_.
+
+Example command 
+*****
+
+.. code-block:: 
+
+    guppy_basecaller -x cuda:all -i <fast5_folder> -r -s ./fastq_pass -c dna_r9.4.1_450bps_hac.cfg
+
+.. note::
+    If you get an error (or it doesn't exist) about ``guppy_basecaller`` not supporting GPU calling, please place the binaries in your path. 
+
+    If you set up MinKNOW to use guppy GPU, ensure that it is properly working and setup in ``/opt/ont/guppy``. Follow `Guppy GPU Basecaller`_ to set this up
+    Ultimately, you need to run the ``ont-guppy/*`` contents into ``/opt/ont/guppy/``
+
+    To check your status of your GPU (ensure CUDA is installed by following `CUDA`_) by running ``nvidia-smi``
 
