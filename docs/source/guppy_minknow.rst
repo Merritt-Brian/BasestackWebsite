@@ -4,6 +4,8 @@ Guppy Minknow
 MinKNOW
 #####
 
+
+
 In order to run the MinION sequencer, you first need to download/install the necessary software from Oxford Nanopore's mirror(s). 
 ::
     wget -O- https://mirror.oxfordnanoportal.com/apt/ont-repo.pub | sudo apt-key add -
@@ -14,6 +16,8 @@ In order to run the MinION sequencer, you first need to download/install the nec
 
     sudo apt-get install -y minion-nc
 
+.. note:: 
+    See `here <https://community.nanoporetech.com/protocols/experiment-companion-minknow/v/mke_1013_v1_revbz_11apr2016/installing-minknow-on-linu>`_
 
 
 Next, we need to install guppy on your system. Skip this step if you are not using a GPU in your system. 
@@ -101,7 +105,7 @@ Then, we need to replace the guppy version. Let's first save the cpu-only one be
     sudo cp -r ont-guppy/bin /opt/ont/guppy/bin && sudo cp -r ont-guppy/data /opt/ont/guppy/data # Move the newly downloaded guppy
     #Disable online need for minknow to ping external servers
     sudo /opt/ont/minknow/bin/config_editor --filename /opt/ont/minknow/conf/sys_conf --conf system --set on_acquisition_ping_failure=ignore
-    sudo service minknow restart # Resart minknow
+    sudo service minknow restart # Restart minknow
 
 
 Then, add these two lines to your `$HOME/.bashrc`
@@ -115,13 +119,18 @@ Then, add these two lines to your `$HOME/.bashrc`
 
 .. note::
 
-    As of 21.06, MinKNOW requires an additional step to add CUDA capability (GPU processing) to basecalling and can be found [here](https://community.nanoporetech.com/posts/gpu-version-of-guppy-doesn)
+    As of 21.06, MinKNOW requires an additional step to add CUDA capability (GPU processing) to basecalling and can be found `here <https://community.nanoporetech.com/posts/gpu-version-of-guppy-doesn>`_
+
+    See `here <https://community.nanoporetech.com/protocols/experiment-companion-minknow/v/mke_1013_v1_revbz_11apr2016/installing-gpu-version-of-guppy-with-minknow-for-minion>`_
 
     In short, the fix quoted at the link states that it requires about 10 steps: 
 
     1. Use systemctl to edit the existing guppyd service (this will open a text editor with a copy of the existing service file):
 
     ``sudo systemctl edit guppyd.service --full``
+
+    Ensure that, if it exists, the override conf doesn't override our changes 
+    ``sudo mv /etc/systemd/system/guppyd.service.d/override.conf /etc/systemd/system/guppyd.service.d/override.conf.old``
 
     2. Edit that new service file to point to your GPU version of guppy, and add the appropriate device flag. You can change any other server arguments at the same time.
 
