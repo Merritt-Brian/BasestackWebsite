@@ -130,7 +130,7 @@ Then, add these two lines to your `$HOME/.bashrc`
     ``sudo systemctl edit guppyd.service --full``
 
     Ensure that, if it exists, the override conf doesn't override our changes 
-    
+
     ``sudo mv /etc/systemd/system/guppyd.service.d/override.conf /etc/systemd/system/guppyd.service.d/override.conf.old``
 
     2. Edit that new service file to point to your GPU version of guppy, and add the appropriate device flag. You can change any other server arguments at the same time.
@@ -218,3 +218,53 @@ Example command
 
     To check your status of your GPU (ensure CUDA is installed by following `CUDA`_) by running ``nvidia-smi``
 
+Reinstalling MinKNOW
+#####
+
+If you experience issues with MinKNOW, one potential solution is to do a purge of MinKNOW and Reinstalling
+
+Notes (below) are gathered from the Oxford Community Forums `here <https://community.nanoporetech.com/posts/software-patch-release-21-9359>`_
+
+1. First purge MinKNOW and remove its dependencies with these two commands:
+
+.. code-block::
+
+    sudo apt purge minion-nc
+
+    sudo apt autoremove
+
+2. Check that there are no residual config files left over:
+
+.. code-block::
+
+    dpkg --list | grep -e minknow -e minion -e guppy
+
+3. If Step 2 returns any results, please manually purge those packages like so:
+
+sudo apt purge package1 package2 package3 etc
+
+4. Delete the minknow installation directory:
+
+.. code-block::
+
+    sudo rm -rf /opt/ont/minknow
+
+5. Ensure there are no Guppy files or folders present in the following directory:
+
+.. code-block::
+
+    ls -l /etc/systemd/system/
+
+6. If any Guppy files or folders are seen in Step 5, please delete them before continuing.
+
+7. After rebooting your computer, update the package listing and install MinKNOW:
+
+.. code-block::
+
+    sudo apt update
+
+    sudo apt install minion-nc
+
+8. Once MinKNOW is installed, please open MinKNOW and start a test sequencing run with CPU basecalling to ensure it is working as expected before configuring your GPU. You can start an experiment with a CTC or used flow cell for the purposes of this test.
+
+9. To configure your GPU, please follow Steps 1-15 on the this page of the MinKNOW user guide. Based on user feedback, we've updated it to make a few steps a bit clearer and I've confirmed on my own laptop that these work for this patch.
