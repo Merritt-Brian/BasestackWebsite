@@ -1,8 +1,10 @@
 API
 ===
 
-.. note::
-   Undergoing Maintenance pending release v2.0.0 of Basestack
+
+.. image:: ../assets/img/workflowBasestack.png
+   :width: 100%
+
 
 Development Setup of Server and App
 -----
@@ -14,19 +16,9 @@ Development Setup of Server and App
    npm run dev:app (if running the app in parallel)
 
 
-Pinging the Server
-----
 
-.. note::
-   You can use Postman as your API management toolkit for testing the server
-
-``curl localhost:5003/server/ping``
-
-returns
-
-.. code-block:: console
-
-   {"status":200,"message":"Server is running at port: 5003"}
+Components
+---------
 
 .. toctree::
     :maxdepth: 2
@@ -34,6 +26,5 @@ returns
 
     api_modules
     api_procedures
-    api_service
-    api_cache
-    api_stats
+    api_job
+    api_system

@@ -1,9 +1,38 @@
-Basestack_Consensus
+Basestack Consensus
 ------
 
 
+-------
+Parameters
+-------
+
+1. ``Long Read Run Directory`` ``Dir`` - Run directory from a MinION, GridION, Mk1C, etc. Must contain several files or folders in it. See ``manifest``, ``sequencing summary`` and ``fastq_pass`` below
+2. ``primers`` ``Text/Dir`` - Choice of Custom (directory) or pre-loadable options for primer set used (Artic only supported pre-loaded primer set currently)
+3. ``barcoding`` ``Text/File`` - Select barcoding configuration used during demultiplexing. If demultiplexing didn't take place, any are allowed
+4. ``basecalling`` ``Text/File`` - Select one of many supported basecalling configurations during the Basecalling step (creating fastq files from fast5)
+5. ``fastq_pass`` ``Dir`` - Directory of fastq files (can be demultiplexed or not). All fastq files to be analyzed MUST be decompressed (no .gz or .zip format allowed)
+6. ``Manifest`` ``List`` - Contains your ID to barcode mapping in a .tsv (tab-separated) format. 
+7. ``Sequencing Summary`` ``File`` - Not inputable. Ensure that it is in the top-level directory (root, same level as the Run Directory). It is required to run some portions. It is output at the end of every Basecalling step from Guppy
+
+.. note::
+   Within manifest, one entry must contain the NTC  ( case-sensitive, no template control). If you don't have a NTC, select NB00 as the barcode and NTC as the id. 
+
+-------
+Returns
+-------
+
+
+1. Consensuses (``./artic-pipeline/4-draft-consensus/``)
+   - Complete FASTA files will be output as ``...complete.fasta for each barcode``
+   - This folder and other sibling folders will contain other file formats such as ``.vcf`` and ``.bam`` for other downstream analysis pipelines. 
+2. Report of Run (``.pdf``)
+   - Contains important information about your samples (each barcode), lineage information, mutations, etc. 
+
+------------------------------------------------------------------------------
+
+
 Running Consensus Generation and Reporting
-###  
+####
 
 Consensus Generation is the main feature of this application and is used to generate a report of a run directory that was generated from a MinION run. It has multiple steps but is designed to be very automated once a job is submit for analysis.
 
@@ -15,7 +44,9 @@ Starting a Run
 
 
 .. image:: ../assets/img/AddRunFolder.png
-   :width: 600
+   :width: 100%
+
+   
 
 1. Select the appropriate test folder first. This folder is either included in the `test-data` folder in the source of this application OR you can retrieve it within the install location of the app. For example, in `C:\Program Files\Basestack\client\data\test-data`. 
 	- You can either drag + drop it into the *Run Folder* field or select it by left clicking and browser to the directory location on your computer
@@ -79,38 +110,34 @@ Lastly, there are three files that are made following a successful sequencing (a
 2. Throughput....csv **OPTIONAL**
 3. Drift Correction **OPTIONAL**
 
-
-Validating Input Directory
-**********************
-
-
-.. image:: ../assets/img/AddedRunFolder.png
-   :width: 600
-
 .. note::
-    Once a folder is input and all greens are seen for the three main files, hit bookmark. The application will save all information and if any error occurs it will be reported appropriately. Please be aware that the software does not catch everything that could go wrong before a job submits
+
+   Future updates of Basestack will prevent the job from commencing if the sequencing summary is not present
 
 Starting the process
 **********************
 
 
-.. image:: ../assets/img/Running.png
-   :width: 600
+.. image:: ../assets/img/StartConsensus.png
+   :width: 100%
 
-1. Once bookmarked, hit the newly-shown *Load* button to load it into the run. This will allow this tab and *RAMPART* to make use of your specified run directory. 
+1. Once everything is staged, you should see all items update accordingly based on information in the directory.
 
-2. Hit `Make Consensus` to start consensus generation. 
+.. image:: ../assets/img/RunConsensus.png
+   :width: 100%
+
+2. Hit `Start` in the upper right-hand corner to start consensus generation. 
 
 .. note::
     Depending on your method of installing Docker on Windows, you may receive a notification for docker to share a folder. Hit okay to allow the pipeline to continue. If you run Basestack as an admin, this error will be avoided. You can also opt to share the Basestack folder and sub-folders in the Docker Desktop on Windows as well (see how to do this in the next 2 images)
 
 
 .. image:: ../assets/img/filesharingoverview.PNG
-   :width: 600
+   :width: 100%
 
 
 .. image:: ../assets/img/filesharingSelectedFolder.PNG
-   :width: 600
+   :width: 100%
 
 .. note::
     Simply select the folder that contains the `Basestack.exe` file by selecting the plus-mark and navigation and selecting it within the browser. In this example it is: `...\build\win-unpacked`
@@ -121,21 +148,21 @@ Checking Logs and Status
 
 
 
-.. image:: ../assets/img/Running.png
-   :width: 600
+.. image:: ../assets/img/LogsConsensus.png
+   :width: 100%
 
 
 .. note::
-    You can see the output of the run in the `Log Streams` tab on the left. You can also see the *Statuse(s)* column begin to change as modules are completed for your run. The final module is the report generation module and should always be *1/1* when complete
+    You can see the output of the run in the `Log Window` container on the bottom of the page. You can also see the *Output(s)* table begin to change as modules are completed for your run. The final module is the report generation module and should always be *1/1* when complete
 
 Final Report
 **********************
 
 
 .. image:: ../assets/img/finalTables.PNG 
-   :width: 600
+   :width: 100%
 
 
 .. note::
-    Once complete, you can view the pdf report by clicking the *pdf* link underneath the final row's status of *1/1*. You can also traverse to any of the module directories by hitting the link text on the first column for each module. In this example, I've chosen *Report Generation* as my link which is a top-level view of all modules, as well as the `report.pdf` location. Open this pdf to see your report either from the folder or the *pdf* link on the left-most column to see your results!
+    Once complete, you can view the pdf report by clicking the *pdf* file icon link underneath the final row's status of *1/1*. You can also traverse to any of the module directories by hitting the link text on the first column for each module. In this example, I've chosen *Report Generation* as my link which is a top-level view of all modules, as well as the `report.pdf` location. Open this pdf to see your report either from the folder or the *pdf* link on the left-most column to see your results!
 
