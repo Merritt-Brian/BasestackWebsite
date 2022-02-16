@@ -29,10 +29,10 @@ Returns
 -------
 
 
-1. Consensuses (``./artic-pipeline/4-draft-consensus/``)
+Consensuses : `./artic-pipeline/4-draft-consensus/`
    - Complete FASTA files will be output as ``...complete.fasta for each barcode``
    - This folder and other sibling folders will contain other file formats such as ``.vcf`` and ``.bam`` for other downstream analysis pipelines. 
-2. Report of Run (``.pdf``)
+Report of Run : `./artic-pipeline/report.pdf`
    - Contains important information about your samples (each barcode), lineage information, mutations, etc. 
 
 ------------------------------------------------------------------------------

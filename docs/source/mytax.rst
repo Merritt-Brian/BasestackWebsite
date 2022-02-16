@@ -7,20 +7,6 @@ Mytax
    This module contains a UI to be displayed from the rendering button in the variables table
 
 
-
-There are 2 primary procedures for this module:
-
-1. Create Report Files
-    - Run kraken-classify to create kraken.report and kraken.json files from a single fastq file
-
-2. View the Visualization
-    - View the output JSON file from Step 1
-
-
-.. image:: ../assets/img/mytax.png 
-   :width: 100%
-
-
 -------
 Parameters
 -------
@@ -39,14 +25,28 @@ Returns
 -------
 
 
-1. Kraken-Report File (``.report``)
+Kraken-Report File : `.report`
     - Used in Pavian and for additional 3rd-party applications
     - Contains a summary of the run
-2. Kraken-JSON (``.json``)
+Kraken-JSON : `.json`
     - Formatted file uploaded/used in the Mytax Sunburst Visualization Procedure.
 
 
 ------------------------------------------------------------------------------
+
+
+There are 2 primary procedures for this module:
+
+1. Create Report Files
+    - Run kraken-classify to create kraken.report and kraken.json files from a single fastq file
+
+2. View the Visualization
+    - View the output JSON file from Step 1
+
+
+.. image:: ../assets/img/mytax.png 
+   :width: 100%
+
 
 
 -------

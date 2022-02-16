@@ -19,9 +19,8 @@ report file : `File`
 Returns
 -------
 
-1. Pavian Visualization
- 
-The tool simply requires you to input your kraken.report (from mytax or otherwise) into the home-page. 
+Pavian Visualization : `User interface`
+   The tool simply requires you to input your kraken.report (from mytax or otherwise) into the home-page. 
 
 .. image:: ../assets/img/pavian_start.png
    :width: 600

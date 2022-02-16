@@ -20,7 +20,7 @@ Returns
 -------
 
 
-1. Annotations (``./annotations``)
+Annotations : `./annotations`
    - Select ``Click Me!`` button to render RAMPART in the UI
 
 ------------------------------------------------------------------------------
