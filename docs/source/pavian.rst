@@ -12,7 +12,8 @@ Pavian
 Parameters
 -------
 
-1. ``report file`` ``File`` -  Report file from Kraken2 run. See :doc:`here <mytax>`.  To be input INSIDE the running visualization. See images below
+report file : `File` 
+   Report file from Kraken2 run. See :doc:`here <mytax>`.  To be input INSIDE the running visualization. See images below
 
 -------
 Returns

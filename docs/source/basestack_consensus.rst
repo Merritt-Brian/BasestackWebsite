@@ -6,13 +6,20 @@ Basestack Consensus
 Parameters
 -------
 
-1. ``Long Read Run Directory`` ``Dir`` - Run directory from a MinION, GridION, Mk1C, etc. Must contain several files or folders in it. See ``manifest``, ``sequencing summary`` and ``fastq_pass`` below
-2. ``primers`` ``Text/Dir`` - Choice of Custom (directory) or pre-loadable options for primer set used (Artic only supported pre-loaded primer set currently)
-3. ``barcoding`` ``Text/File`` - Select barcoding configuration used during demultiplexing. If demultiplexing didn't take place, any are allowed
-4. ``basecalling`` ``Text/File`` - Select one of many supported basecalling configurations during the Basecalling step (creating fastq files from fast5)
-5. ``fastq_pass`` ``Dir`` - Directory of fastq files (can be demultiplexed or not). All fastq files to be analyzed MUST be decompressed (no .gz or .zip format allowed)
-6. ``Manifest`` ``List`` - Contains your ID to barcode mapping in a .tsv (tab-separated) format. 
-7. ``Sequencing Summary`` ``File`` - Not inputable. Ensure that it is in the top-level directory (root, same level as the Run Directory). It is required to run some portions. It is output at the end of every Basecalling step from Guppy
+Long Read Run Directory : `Dir` 
+   Run directory from a MinION, GridION, Mk1C, etc. Must contain several files or folders in it. See ``manifest``, ``sequencing summary`` and ``fastq_pass`` below
+primers :  `Text/Dir` 
+   Choice of Custom (directory) or pre-loadable options for primer set used (Artic only supported pre-loaded primer set currently)
+barcoding :  `Text/File` 
+   Select barcoding configuration used during demultiplexing. If demultiplexing didn't take place, any are allowed
+basecalling :  `Text/File` 
+   Select one of many supported basecalling configurations during the Basecalling step (creating fastq files from fast5)
+fastq_pass :  `Dir` 
+   Directory of fastq files (can be demultiplexed or not). All fastq files to be analyzed MUST be decompressed (no .gz or .zip format allowed)
+manifest :  `List` 
+   Contains your ID to barcode mapping in a .tsv (tab-separated) format. 
+Sequencing Summary :  `File` 
+   Not inputable. Ensure that it is in the top-level directory (root, same level as the Run Directory). It is required to run some portions. It is output at the end of every Basecalling step from Guppy
 
 .. note::
    Within manifest, one entry must contain the NTC  ( case-sensitive, no template control). If you don't have a NTC, select NB00 as the barcode and NTC as the id. 

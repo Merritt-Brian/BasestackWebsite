@@ -25,10 +25,14 @@ There are 2 primary procedures for this module:
 Parameters
 -------
 
-1. ``fastq file`` ``File`` - FastQ file (single) obtained from any sequencing run. You can consolidate multiple fastq files into one if you want to run a long sequencing run. 
-2. ``Nodes`` ``Directory`` - Location of the taxonomy files. Default is contained within the ```jhuaplbio/basestack_mytax`` image and pre-loaded on run
-3. ``Database`` ``Directory`` - Directory to use as the database for Kraken2. Defaults to Flukraken pre-loaded in the Docker image. 
-4. ``Memory Mapping`` ``Option`` - Choose to pre-load the database (fast, requires high RAM) or run on the local filesystem (slow, only use with low RAM available)
+fastq file : `File` 
+    FastQ file (single) obtained from any sequencing run. You can consolidate multiple fastq files into one if you want to run a long sequencing run. 
+nodes : `Directory` 
+    Location of the taxonomy files. Default is contained within the ```jhuaplbio/basestack_mytax`` image and pre-loaded on run
+database : `Directory` 
+    Directory to use as the database for Kraken2. Defaults to Flukraken pre-loaded in the Docker image. 
+memory-mapping` : `Option` 
+    Choose to pre-load the database (fast, requires high RAM) or run on the local filesystem (slow, only use with low RAM available)
 
 -------
 Returns
@@ -43,7 +47,6 @@ Returns
 
 
 ------------------------------------------------------------------------------
-
 
 
 -------

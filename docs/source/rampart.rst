@@ -10,8 +10,10 @@ Rampart is an annotation tool provided by the Artic Network that gives quick, bu
 Parameters
 -------
 
-1. ``Fastq Dir`` ``Dir`` - Run annotation of SARS-nCoV-2 sequences within the RAMPART suite
-2. ``Annotated Clear`` ``Option`` - Remove your annotated folder if you want to do a fresh run. Annotations will be removed from the same directory as the ``Fastq Dir``
+Fastq Dir : `Dir` 
+   Run annotation of SARS-nCoV-2 sequences within the RAMPART suite
+Annotated Clear : `Option` 
+   Remove your annotated folder if you want to do a fresh run. Annotations will be removed from the same directory as the ``Fastq Dir``
 
 -------
 Returns
