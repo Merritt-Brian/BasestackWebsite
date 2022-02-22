@@ -24,6 +24,133 @@ Next, we need to install guppy on your system. Skip this step if you are not usi
 
 PLEASE NOTE: this option is available only for Linux-based distributions. You have to use CPU-mode for Windows (Fast config basecalling mode)
 
+
+Running the app
+^^^^^^^
+
+Select Minknow from the Quick-launch location in Ubuntu. Usually, this is in the bottom-left section of the screen. You should see the MinKNOW icon
+
+.. image:: ../assets/img/quicklaunch_linux_1.png
+   :width: 100%
+
+.. image:: ../assets/img/quicklaunch_linux_2.png
+   :width: 100%
+
+.. image:: ../assets/img/MinKNOWUIAnalysis.png 
+   :width: 100%
+
+.. note::
+    If you dont set your analysis to run offline, you will see a window that asks you to login. Please follow instructions below to disable online-mode
+
+Testing Guppy Basecaller from MinKNOW
+^^^^^^^^
+
+First, select the ``Start`` at the top-left. Then, select ``Basecalling``
+
+.. image:: ../assets/img/basecalling_1.png 
+   :width: 100%
+
+.. note:: 
+    By default, all sequencing runs will output to /var/lib/minknow/data on Linux machines. 
+
+.. warning::
+    To run basecalling from the UI, you MUST ensure that permissions allow reading + writing for the ``minknow`` group on Linux machines
+
+Here, you must select the basecalling configuration you'd like to use
+
+.. image:: ../assets/img/basecalling_2.png 
+   :width: 100%
+
+
+Most, when running the MinION or MK1C, will use the ``FLO-MIN106 / FLO-FLG001 DNA`` options, it is the default option.
+
+Next, pick whether you want the High-Accuracy or Fast configurations (in the names)
+
+.. image:: ../assets/img/basecalling_3.png 
+   :width: 100%
+
+.. note::
+    High-Accuracy is RECOMMENDED if using a GPU-capable laptop with a CUDA-compatible device. Make sure you set up GPU basecalling as described here `Guppy GPU Basecaller`_
+    Fast accuracy is optional but is RECOMMENDED for non GPU-capable laptops/devices. It will run everything using a CPU. 
+
+.. warning::
+    If sequencing, it is generally not recommended to run basecalling at the same time if using ``Fast``, CPU-only. This is because the system can get overloaded and crash the application
+
+.. image:: ../assets/img/barcoding_1.png 
+   :width: 100%
+
+.. note::
+    If you don't see any barcoding kits, go here `Barcoding Kits Missing`_ to fix
+
+Move through the rest of the configurations until you finally can hit ``Start``, the green button at the bottom-right of the page
+
+
+.. image:: ../assets/img/success_basecalling.png
+   :width: 100%
+
+.. note::
+    The progress should begin to update as the process goes forward. 
+..warning::
+    If it errors out, check logs by selecting the right arrow or by looking at all files (recently made) at ``/var/log/minknow``. Oftentimes it is an issue with permissions
+
+
+
+
+Oxford Community Forums
+^^^^^^^^^
+
+Oxford provides a very active forum for users of ONT software and hardware to interact and post questions or solutions to issues. 
+
+Additionally, the Oxford team will oftentimes provide helpful information on their devices or software
+
+First, head to https://community.nanoporetech.com/
+
+.. image:: ../assets/img/community_start.png 
+   :width: 100%
+
+You will need to make an Oxford account to do so. Please register for an account as all Oxford hardware users should have the ability to login and view the community pages available on the site
+
+.. image:: ../assets/img/community_2.png 
+   :width: 100%
+
+.. image:: ../assets/img/community_3.png 
+   :width: 100%
+
+Now, lets run through an example. We discussed earlier (as a warning) that sometimes you may not see the barcoding kits when basecalling your runs
+This is a common bug that was found with one of the patches for the MinKNOW software, caught by some community members
+
+Simply look at the top of the page and enter your query. In this example, lets type "missing barcodes kits" where you will get some suggested items. Either hit ``Enter`` to view all items or select one of the quick-launch items
+
+.. image:: ../assets/img/community_4.png 
+   :width: 100%
+
+This site is an invaludable tool if you're experiencing issues with your software or hardware. Oftentimes, responses to updates or issues are quick, so it is highly recommended to follow these forums from time-to-time
+
+
+Viewing downloads
+^^^^^^^^
+
+Oxford also provides a set of software links you can download applications from. These are available at https://community.nanoporetech.com/downloads
+
+.. image:: ../assets/img/minion_website_download.png
+   :width: 100%
+
+Setting Up Guppy for GPU
+^^^^^^^^
+
+
+See `here <https://community.nanoporetech.com/protocols/experiment-companion-minknow/v/mke_1013_v1_revbz_11apr2016/installing-gpu-version-of-guppy-with-minknow-for-minion>`_ for more advanced details
+
+If you have a CUDA-capable GPU in your laptop, follow `CUDA`_ and the above link to set it up for MinKNOW
+
+.. image:: ../assets/img/gpu_guppy_website.png
+   :width: 100%
+
+.. note::
+    Running GPU basecalling is not required if you prefer to run it from the command line, detailed here `Guppy GPU Basecaller`_ 
+
+.
+
 CUDA
 #####
 
@@ -171,7 +298,7 @@ Then, add these two lines to your `$HOME/.bashrc`
 
 
 .. image:: ../assets/img/cuda_gpu_guppy.png 
-   :width: 600
+   :width: 100%
 
 From there you are all set to run basecalling directly within the MinKNOW application.
 
