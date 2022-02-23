@@ -138,6 +138,7 @@ Finally, restart **Docker Desktop**
 *Credit to `this solution <https://github.com/microsoft/WSL/issues/4951#issue-576319182>`_
 
 
+.. _Troubleshooting Virtualization:
 
 Virtualization Disabled - Windows
 #### 
@@ -248,28 +249,24 @@ In Basestack select ``System -> Windows Services -> Add User Docker-Users``. Whe
 
 **Alternatively** if the above does not work try the following:
 
-![Step 1]({{site.baseurl}}/assets/img/computerManagement.PNG "Title")
 
 .. image:: ../assets/img/computerManagement.PNG
    :width: 600
 
 - In the Windows search taskbar (bottom left icon), find ``Computer Management``
 
-![Step 2]({{site.baseurl}}/assets/img/selectComputerManagementDocker.PNG "Title")
 
 .. image:: ../assets/img/selectComputerManagementDocker.PNG 
    :width: 600
 
 - Select (left-side) System Tools -> Local Users and Groups -> Groups
 
-![Step 3]({{site.baseurl}}/assets/img/docker-user-view.PNG "Title")
 
 .. image:: ../assets/img/docker-user-view.PNG
    :width: 600
 
 - Double click ``docker-users`` and see if your name is there, if not: 
 
-![Step 4]({{site.baseurl}}/assets/img/docker-users-add.PNG "Title")
 
 .. image:: ../assets/img/docker-users-add.PNG
    :width: 600
@@ -282,9 +279,10 @@ In Basestack select ``System -> Windows Services -> Add User Docker-Users``. Whe
 Linux
 #####
 
-#### Permisson denied (Linux)
+Permisson denied (Linux)
+^^^^ 
 
-Please ensure that you follow the correct :ref:`linux_docker`_ here to using `userns-remap`
+Please ensure that you follow the correct :ref:`linux_docker` here to using `userns-remap`
 
 Note that this will map all of your processes INSIDE the docker containers to your user id if used properly. You will need sudo to delete any files or folders that are causing issues.
 

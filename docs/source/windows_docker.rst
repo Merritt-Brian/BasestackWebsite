@@ -10,6 +10,39 @@ Docker Download + Install
 
 1. Head over to the `Docker <https://docs.docker.com/docker-for-windows/install/>`_ website to download the necessary package
 
+
+
+
+.. collapse:: Check Processor support for Docker (Click to expand)
+
+
+   In order to run docker you must be able to support virtualization from your CPU. This feature must also be enabled within your BIOS and Windows Features. 
+   
+   See more of :ref:`Troubleshooting Virtualization` for more details
+
+   If you're unsure whether docker is supported by your specific cpu, please visit and input your specific model number:
+
+   - `Intel <https://ark.intel.com/content/www/us/en/ark.html>`_
+   - `AMD <https://www.amd.com/en/products/specifications/processors>`_
+
+   Type Your Model Number, e.g. T6500 into the product search bar
+
+   .. image:: ../assets/img/intel_product_example_annotated.png
+      :width: 100%
+
+   In this example above, you can see that Vt-x (Virtualization) is not supported. This will be a **Yes** if it is supported.
+
+   To find the cpu model on Windows:
+
+   .. image:: ../assets/img/system_info_cpu_windows.PNG
+      :width: 100%
+
+
+
+.. raw:: html
+
+   <hr>
+
 .. image:: ../assets/img/Docker1.PNG
    :width: 600
 
@@ -62,10 +95,10 @@ Install Main
 ######
 
 
-Download Basestack from `Releases <"https://github.com/Merritt-Brian/Basestack/releases">`_
+Download Basestack from `Releases <https://github.com/jhuapl-bio/Basestack/releases/latest>`_
 
-- You will select the item labeled (``<Basestack-Version>.Setup.exe``)
+- You will select the item labeled ``<Basestack-Version>.Setup.exe``
 
-1. Double-click ``<Basestack-Version>.Setup.exe ``
+1. Double-click ``Basestack-Version.Setup.exe``
 2. Follow the prompts for installing the software. Choose defaults unless otherwise needed.
 

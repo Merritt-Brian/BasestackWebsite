@@ -76,6 +76,7 @@ dependencies:
     - sphinx-autobuild==2021.3.14
     - sphinx-rtd-theme==1.0.0
     - texttable==1.6.4
+    - sphinx-toolbox
     - tornado==6.1
     - websocket-client==0.59.0
 prefix: /Users/merribb1/opt/anaconda3/envs/readthedocs
