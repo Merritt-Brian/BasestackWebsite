@@ -27,6 +27,5 @@ To find the cpu model on Windows:
 
 On Mac or Ubuntu you can find this value in the About page e.g. on Ubuntu:
 
-
 .. image:: ../assets/img/about_ubuntu.png
    :width: 100%

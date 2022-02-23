@@ -1,6 +1,11 @@
 sphinx:
   fail_on_warning: true
+  configuration: docs/source/conf.py
 
+python:
+  version: 3.7
+  install:
+    - requirements: requirements.txt
 formats:
   - pdf
   - epub
