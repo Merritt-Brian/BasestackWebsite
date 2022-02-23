@@ -87,7 +87,7 @@ Choose **ONE** option
 
 Open a terminal and type `docker info`. You should see information about your `docker` service
 
-.. image:: ../assets/img/docker_info.png
+.. image:: ../assets/img/docker_info.PNG
    :width: 600
 
 
