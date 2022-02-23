@@ -4,9 +4,7 @@ General
 - Request or view feature changes at our [issue tracker](https://github.com/jhuapl-bio/Basestack/issues)
 - If you run into issues with the online install, you may want to download (or otherwise obtain) the offline install package
 	- Using the above download links, download the appropriate docker images you'd like e.g. ``basestack_consensus.tar.gz`` (~5.2GB)
-	- With the 'Module Install' tab, select the gear icon and switch install method to 'offline'
-	- Drag or Browse to that file on YOUR SYSTEM into the appropriate file input space
-	- Click 'Install' (play-circle button)
+	- Run ``docker load < basestack_consensus.tar.gz`` from the command line 
 - See below Appendices for more detailed installation instructions. 
 
 Windows
