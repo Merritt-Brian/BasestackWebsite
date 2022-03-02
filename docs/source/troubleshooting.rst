@@ -158,8 +158,30 @@ If it is not, open up **Command Terminal** and type: ``systeminfo``. Scroll to t
 .. image:: ../assets/img/WinSysInfoCMD.PNG
    :width: 600
 
-
 If not, you will need to enable Virtualization in your BIOS. This process will look different based on everyone's system. You should try to follow the instructions in this [link](https://www.thewindowsclub.com/disable-hardware-virtualization-in-windows-10). Choose your manufacturer type. 
+
+You might also experience an error about BIOS not having virtiualization enabled as soon as Docker attempts to start
+
+.. image:: ../assets/img/BIOSVirtualization.png
+   :width: 100%
+
+Follow these steps from https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html:
+
+Reboot your computer
+   - Right when the computer is coming up from the black screen, press Delete, Esc, F1, F2, or F4. Each computer manufacturer uses a different key but it may show a brief message at boot telling you which one to press. If you miss it the first time, reboot and try again. It helps to tap the key about twice a second when the computer is coming up. If you are not able to enter the BIOS via this method, consult your computer’s manual.
+   - In the BIOS settings, find the configuration items related to the CPU. These can be in under the headings Processor, Chipset, or Northbridge.
+   - Enable virtualization; the setting may be called VT-x, AMD-V, SVM, or Vanderpool. Enable Intel VT-d or AMD IOMMU if the options are available.
+   - Save your changes and reboot.
+   - Delete any existing VMs (Machine > Remove ** and select ** Delete all files) and re-import the .ova file (following step 4 and subsequent steps of the installation instructions).
+   - Check if your system supports Virtualization
+   - If you are unable to find the Virtualization settings in your BIOS it may mean that your laptop does not support it. If you want to try to find this out yourself, then you can try:
+
+On Windows, download and run a Microsoft utility. You can also download utilities to check if your CPU is capable of virtualization, if not enabled. Hyper-V must be disabled in order for VirtualBox to run 64-bit guest operating systems. Visit the “turn Windows feature on or off” application and make sure Hyper-V is not checked.
+
+On Linux, open a terminal window and run:
+
+   ``egrep -q 'vmx|svm' /proc/cpuinfo && echo yes || echo no``
+
 
 Typically, though, to enter BIOS you must restart the computer and while it is booting hit **DEL** or **F2** or sometimes **F12**. This process is usually very quick so be ready. When it is booting, you may be able to catch the necessary keys flash.
 

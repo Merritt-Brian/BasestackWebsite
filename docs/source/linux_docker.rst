@@ -88,7 +88,7 @@ Choose **ONE** option
 Open a terminal and type `docker info`. You should see information about your `docker` service
 
 .. image:: ../assets/img/docker_info.PNG
-   :width: 600
+   :width: 100%
 
 
 **Rootful**:
@@ -101,13 +101,13 @@ Additionally, for Docker Rootless only, you'll need to adjust the socket that Ba
 
 
 .. image:: ../assets/img/change_socket.png
-   :width: 600
+   :width: 100%
 
 
 If you're unsure where that is run: ``docker context ls`` and it will be the DOCKER ENDPOINT value sans the ``unix://`` 
 
 .. image:: ../assets/img/docker_context_ls.png
-   :width: 600
+   :width: 100%
 
 Basestack
 -------
