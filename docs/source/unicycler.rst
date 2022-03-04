@@ -4,8 +4,9 @@ Unicycler
 A hybrid assembly pipeline for bacterial genomes
 
 `Unicycler <https://github.com/rrwick/Unicycler>`_ 
- 
-<strong>This pipeline uses SPAdes</strong>
+
+.. note::
+   This pipeline uses `SPAdes <https://github.com/ablab/spades>`_
 
 
 
@@ -67,7 +68,7 @@ Returns
 1. Genome Assembly: `Tab-separated annotation`
 
    Assembly FASTA File
-   
+
 2. GFA File: `File`
 
    Can be used in 3rd party tools like `Bandage <https://github.com/rrwick/Bandage>`_
