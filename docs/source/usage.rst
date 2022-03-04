@@ -25,6 +25,13 @@ Modules
    artic
    ivar
    minimap2
+   pangolin
+   mash
+
+   vadr
+   samtools
+   unicycler
+
 
 .. _supplemental_software:
 

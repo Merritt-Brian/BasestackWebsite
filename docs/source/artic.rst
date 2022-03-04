@@ -1,4 +1,4 @@
-Artic
+Artic Field Bioinformatics
 -----
 
 
@@ -7,7 +7,7 @@ Artic
 .. note::
    This module will output multiple consensuses per barcode of interest. It takes in a raw fastq_pass directory and outputs `.vcfs`, `.fasta`, and `.bam` files for further use
 
-.. Artic - Medaka:
+.. _Artic - Medaka:
 
 Medaka
 ^^^^^^^^^^
