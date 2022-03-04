@@ -118,11 +118,13 @@ Examples:
 
 1. Select **Python3.7** version of Anaconda to install and choose **Save File**
 
-![Step 1]({{site.baseurl}}/assets/img/Anaconda1.PNG "Title")
+..	image:: ../assets/img/Anaconda1.PNG "Title")
+   	:width: 100%
 
 2. Wait for the process to bring up the user interface. Select **Next** several times until you get to the install directory location
 
-![Step 1]({{site.baseurl}}/assets/img/Anaconda2.PNG "Title")
+..	image:: ../assets/img/Anaconda2.PNG "Title")
+   	:width: 100%
 
 If you'd like a new install location specify here. You will need to supply this path for **Step 2**
 

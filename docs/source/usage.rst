@@ -17,7 +17,12 @@ Modules
    basestack_consensus
    nextstrain
    igv
+   gamma
    rampart
+   fastqc
+   nanoplot
+   bamstats
+   artic
 
 .. _supplemental_software:
 

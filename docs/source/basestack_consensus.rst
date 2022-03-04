@@ -1,6 +1,7 @@
+.. _Basestack Consensus:
+
 Basestack Consensus
 ------
-
 
 -------
 Parameters
