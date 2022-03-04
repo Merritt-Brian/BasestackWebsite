@@ -23,6 +23,8 @@ Modules
    nanoplot
    bamstats
    artic
+   ivar
+   minimap2
 
 .. _supplemental_software:
 
