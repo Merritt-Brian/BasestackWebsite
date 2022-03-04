@@ -27,7 +27,6 @@ Modules
    minimap2
    pangolin
    mash
-
    vadr
    samtools
    unicycler
