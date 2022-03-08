@@ -1,3 +1,5 @@
+.. _minimap2def:
+
 Minimap2
 -----
 
@@ -6,7 +8,6 @@ Minimap2
 
 Minimap2 performs alignment for genomic and spliced nucleotide files
 
-.. minimap2def:
 
 -------
 Parameters

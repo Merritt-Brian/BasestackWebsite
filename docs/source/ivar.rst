@@ -17,21 +17,27 @@ Parameters
 
 - BAM file: `file` 
 
-   Alignment BAM file to search for coding regions from
+   - Alignment BAM file to search for coding regions from. Example pipelines/commands that generate a `bam` file are 
+      - :ref:`minimap2def`
+      - :ref:`Artic - Medaka`
+      - :ref:`Artic - Nanopolish`
+      - :ref:`Basestack Consensus`
+
 
 - Reference GFF3: `option or File`
 
-   Coding region list that you want to use the alignment searching against
+   - Coding region list that you want to use the alignment searching against
+   - Optional, only used for the ``Variant`` service
 
 - Reference FASTA: `File`
-   Your original reference FASTA file during alignment. Must also be linked to the GFF3 described above
-   
+   - Your original reference FASTA file during alignment. Must also be linked to the GFF3 described above
 
 -------
 Returns
 -------
 
-1. IVAR Output: `Tab-separated file`
+1. IVAR Consensus FASTA: `file`
+2. IVAR Output: `Tab-separated file`
 
 .. note::
    Contains list of GFFs that map to variants that were called in the BAM file
