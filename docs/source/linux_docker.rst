@@ -50,6 +50,7 @@ Docker Installation
 
 Choose **ONE** option
 
+
 - **A. Rootless** - RECOMMENDED 
 	- https://docs.docker.com/engine/security/rootless/
 		- If you already have `docker` installed, see documentation on [`docker context`](https://docs.docker.com/engine/security/rootless/#client) to switch between rootless and rootful
