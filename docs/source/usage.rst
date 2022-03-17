@@ -40,5 +40,6 @@ Supplemental
 .. toctree::
    guppy_minknow
    supplemental_software
+   nvidia_jetson
    info
 
