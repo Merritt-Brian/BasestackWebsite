@@ -60,31 +60,47 @@ Choose **ONE** option
 		- Recommended for most rootful-specific personal systems running Docker
 	- Post-Installation Steps:
 		1. Create Docker group
-			- `sudo groupadd docker`
+			- ``sudo groupadd docker``
 		2. Add your user to the docker group
-			- `sudo usermod -aG docker $USER`
+			- ``sudo usermod -aG docker $USER``
 		3. Ensure all root-created files map as your user id in docker containers and volumes (Do both of these)
-			- **1.** `sudo sed -i "1s/^/$USER:$(id -u):1\n/" /etc/subuid`
-			- **2.** `sudo sed -i "1s/^/$USER:$(id -g):1\n/" /etc/subgid`
+			- **1.** ``sudo sed -i "1s/^/$USER:$(id -u):1\n/" /etc/subuid``
+			- **2.** ``sudo sed -i "1s/^/$USER:$(id -g):1\n/" /etc/subgid``
 		4. Create Docker container namespace **CHOOSE ONE**
 			- **a.** `echo "{\"userns-remap\": \"$USER\"}" | sudo tee -a /etc/docker/daemon.json`
 				- If you dont have the file already created (isn't created by default)
 			- **b.** Manually add your user by following the instructions here: https://docs.docker.com/engine/security/userns-remap/.
 				- You can disable the `userns-remap` functionality by deleting the `daemon.json` file described above or removing the line attributed to your user
 		5. Check that the subgid and subuid files are correct. Order of these lines matters in that the `<username>:<uid>:1` must come first in each file
-			- **1.** `cat /etc/subuid`
-				-`<username>:<uid>:1`
-				-`<username>:100000:65536`
+			- **1.** ``cat /etc/subuid``
+				-``<username>:<uid>:1``
+				-``<username>:100000:65536``
 			- **2.** `cat /etc/subgid`
-				-`<username>:<uid>:1`
-				-`<username>:100000:65536` 
+				-``<username>:<uid>:1``
+				-``<username>:100000:65536``
 		6. Restart Docker 
-			- **a**. `sudo service docker restart`
+			- **a**. ``sudo service docker restart``
 			- **b**. OR Restart your computer/session
 		7. Ensure that permissions are appropriate
-			- **1**. `docker run -v /tmp:/opt/tmp nginx touch /opt/tmp/test.txt`
-			- **2**. `ls -lht /tmp/test.txt` 
+			- **1**. ``docker run -v /tmp:/opt/tmp nginx touch /opt/tmp/test.txt``
+			- **2**. ``ls -lht /tmp/test.txt`` 
 				- ^ ensure that ownership is your uid/gid or username:group
+
+
+..  code-block::
+	:caption: Full block of code for Option B (Rootful)
+
+	sudo usermod -aG docker $USER
+	sudo sed -i "1s/^/$USER:$(id -u):1\n/" /etc/subuid
+	sudo sed -i "1s/^/$USER:$(id -u):1\n/" /etc/subgid
+
+	if [[ -s "/etc/docker/daemon.json" ]]; then
+		cat "/etc/docker/daemon.json" | jq --arg USERNS $USER '."userns-remap" = $USERNS' > /tmp/daemon.json
+		sudo mv /tmp/daemon.json /etc/docker/daemon.json
+	else
+		echo "{\"userns-remap\": \"$USER\"}"  | sudo tee -a /etc/docker/daemon.json
+	fi
+
 
 Open a terminal and type `docker info`. You should see information about your `docker` service
 
