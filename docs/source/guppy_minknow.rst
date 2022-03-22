@@ -173,10 +173,10 @@ then copy + paste
 ::
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
     sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
-    wget https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda-repo-ubuntu2004-11-3-local_11.3.0-465.19.01-1_amd64.deb
-    sudo dpkg -i cuda-repo-ubuntu2004-11-3-local_11.3.0-465.19.01-1_amd64.deb
-    sudo apt-key add /var/cuda-repo-ubuntu2004-11-3-local/7fa2af80.pub
-    sudo apt-get -y update
+    wget https://developer.download.nvidia.com/compute/cuda/11.6.1/local_installers/cuda-repo-ubuntu2004-11-6-local_11.6.1-510.47.03-1_amd64.deb
+    sudo dpkg -i cuda-repo-ubuntu2004-11-6-local_11.6.1-510.47.03-1_amd64.deb
+    sudo apt-key add /var/cuda-repo-ubuntu2004-11-6-local/7fa2af80.pub
+    sudo apt-get update
     sudo apt-get -y install cuda
 
 
@@ -243,6 +243,33 @@ Then, add these two lines to your `$HOME/.bashrc`
 
 .. note::
     Add this to your bashrc for the user if you want to run guppy gpu from the command line
+
+.. warning::
+    If you perform the above steps and you still can't access/see the GPU with ``nvidia-settings`` or ``nvidia-smi``, you might need to disable secure boot
+    `Here <https://www.gigabyte.com/us/Support/FAQ/3001>`_ or `here <https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/disabling-secure-boot?view=windows-11#:~:text=Find%20the%20Secure%20Boot%20setting,Save%20changes%20and%20exit>`_ are examples of how to do that. You need to enter BIOS to perform this operation
+
+    1. Boot and press [F2] to enter BIOS.
+    2. Go to [Security] tab > [Default Secure boot on] and set as [Disabled].
+    3. Go to [Save & Exit] tab > [Save Changes] and select [Yes].
+    4. Go to [Security] tab and enter [Delete All Secure Boot Variables] and select [Yes] to proceed.
+    5. Then, select [OK] to restart.
+
+    OR    
+
+    1. Open the PC BIOS menu:
+
+        You can often access this menu by pressing a key while your PC is booting, such as F1, F2, F12, or Esc.
+
+        Or
+
+        From Windows, hold the Shift key while selecting Restart. Go to Troubleshoot > Advanced Options: UEFI Firmware Settings.
+
+    2. Find the Secure Boot setting in your BIOS menu. If possible, set it to Disabled. This option is usually in either the Security tab, the Boot tab, or the Authentication tab.
+
+    3. Save changes and exit. The PC reboots.
+
+
+
 
 .. note::
 
