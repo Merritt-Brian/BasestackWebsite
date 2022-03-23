@@ -36,8 +36,13 @@ Install `Docker <https://docs.docker.com/engine/install/#server>`_
    <hr>
 
 
-
 Make sure that you select the appropriate distribution for your machine. If you are unsure of your distribution use `lsb_release -a` from the command line to check your distro.
+
+.. note::
+	You can retrieve a basic install script for a fresh environment that can be found `here <https://github.com/jhuapl-bio/Basestack/tree/staging/supplemental/base_install_arm64.sh>`_
+	It is primarily intended for newly flashed Ubuntu systems. This script will work for both ARM64 and AMD64 processors
+
+	It will set up Docker, Download Basestack, CUDA, and MinKNOW
 
 .. image:: ../assets/img/release_distro.png
    :width: 600
@@ -136,8 +141,8 @@ Install Main
 
 Download Basestack from `Releases <https://github.com/jhuapl-bio/Basestack/releases/latest>`_
 
-- You will select the item labeled ``<Basestack-Version>.AppImage``
+- You will select the item labeled ``<Basestack-Version>.<arch>.AppImage``
 
-1. Double-click ``<Basestack-Version>.AppImage``
+1. Double-click ``<Basestack-Version>.<arch>.AppImage``
 2. Follow the prompts for installing the software. Choose defaults unless otherwise needed.
-3. chmod ugo+x ``<Basestack-Version>.dmp``
+3. chmod ugo+x ``<Basestack-Version>.<arch>.AppImage``

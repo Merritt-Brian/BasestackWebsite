@@ -15,7 +15,9 @@ If you need to set up Basestack, you must install the Nightly build variant of t
 
 
 Simply follow these 2 steps:
-    1. Download the AppImage from the above-mentioned `releases <https://github.com/jhuapl-bio/Basestack/releases/tag/arm64>`_ page
+    1. Download the arm64 AppImage from the above-mentioned `releases <https://github.com/jhuapl-bio/Basestack/releases/latest>`_ page
     2. OPTIONAL: Run the install script. This can be found `here <https://github.com/jhuapl-bio/Basestack/tree/staging/supplemental/base_install_arm64.sh>`_
 
 
+.. note::
+    The install script described above will ask several questions for setting up your environment based on your needs. Make sure to select the ``r`` option for any question asking for ``arm64`` or ``amd64``
