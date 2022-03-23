@@ -1,7 +1,7 @@
 NVIDIA Jetson Setup
 -----
 
-If you need to set up Basestack, you must install the Nightly build variant of the distribution at: https://github.com/jhuapl-bio/Basestack/releases/tag/arm64
+If you need to set up Basestack, you must install the Nightly build variant of the distribution at: https://github.com/jhuapl-bio/Basestack/releases/latest
 
 
 .. note::
