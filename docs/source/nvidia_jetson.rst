@@ -21,3 +21,6 @@ Simply follow these 2 steps:
 
 .. note::
     The install script described above will ask several questions for setting up your environment based on your needs. Make sure to select the ``r`` option for any question asking for ``arm64`` or ``amd64``
+
+    Also, try to follow steps in this `link <https://github.com/sirselim/jetson_nanopore_sequencing/blob/main/live_basecalling.md#install-minion-software>`_ for minknow
+    Or, try this `link <https://dev.to/ajeetraina/install-cuda-on-jetson-nano-2b06>`_ if you have troubles with CUDA and Guppy
