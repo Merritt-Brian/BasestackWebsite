@@ -25,6 +25,10 @@ Simply follow these 2 steps:
     Also, try to follow steps in this `link <https://github.com/sirselim/jetson_nanopore_sequencing/blob/main/live_basecalling.md#install-minion-software>`_ for minknow
     Or, try this `link <https://dev.to/ajeetraina/install-cuda-on-jetson-nano-2b06>`_ if you have troubles with CUDA and Guppy
 
+.. warning::
+    
+    The  later versions of MinKNOW can lead to a failure to load the barcoding kits in the UI. If you experience this, follow this procedure :ref:`barcoding kits missing` to remedy
+
 
 .. note::
     JetPack (Nviida Jetson only) does not ship with ``nvidia-smi`` as a way to monitor gpu usages. You can instead run ``sudo -H pip install -U jetson-stats`` to get the ``jtop`` command to monitor resources on your jetson device

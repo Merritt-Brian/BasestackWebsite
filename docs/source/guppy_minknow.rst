@@ -192,6 +192,8 @@ Once installed you can confirm that it is working by writing:
 
 If both commands return a healthy output, you are all set on CUDA.
 
+.. _barcoding kits missing:
+
 Barcoding Kits Missing
 ####
 
@@ -200,7 +202,7 @@ Newer installs of Minknow will not render barcoding kits appropriately on starti
 
 1. ``sudo nano /opt/ont/minknow/conf/app_conf`` and replace ``use_tcp`` to ``true``
 2. ``sudo systemctl edit guppyd.service`` and replace ``--port`` with ``5555`` and add ``--use_tcp``
-3. ``sudo nano /etc/systemd/system/guppyd.service.d/override.conf`` and replace ``--port`` with ``5555`` and add ``--use_tcp``
+3. ``sudo mv /etc/systemd/system/guppyd.service.d/override.conf /etc/systemd/system/guppyd.service.d/override.conf.old`` (if it exists)
 4. Finally, run ``sudo systemctl daemon-reload`` to make changes. 
 
 .. note::
