@@ -1,5 +1,8 @@
+.. _api:
+
 API
 ===
+
 
 
 .. image:: ../assets/img/workflowBasestack.png

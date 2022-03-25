@@ -1,8 +1,17 @@
 Basestack
 =======================================
 
+Getting Started
+----------------
 
-General
+:ref:`installation`
+
+:ref:`usage`
+
+:ref:`API`
+
+
+About
 ----------------
 
 .. image:: ../assets/img/homepage.png
@@ -16,25 +25,25 @@ Basestack is a platform for rapid and real time analysis of Nanopore generated s
   data within minutes of starting. In addition, we provide a system for automated updates once the application is installed 
   for any future changes or additions to the application that is fundamentally built upon the Docker Container ecosystem.
 
+
 Please follow the sidebar links to review both installation steps for your distribution and additional information on the underlying pipelines.
 
 Basestack's recent releases can be found at: https://github.com/jhuapl-bio/Basestack/releases/
 
-Future Architecture for Consensus Generation
-
-.. image:: ../assets/img/Current_Future_Architecture_Basestack.jpg
-   :width: 600
 
 
-.. note::
 
-   This project is under active development pending release of v2.0.0
+.. image:: ../assets/img/workflowBasestack.png
+   :width: 100%
+
+
+
 
 Contents
 --------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    installation
    usage
