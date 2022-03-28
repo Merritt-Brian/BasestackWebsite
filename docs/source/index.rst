@@ -1,6 +1,7 @@
 Basestack
 =======================================
 
+
 Getting Started
 ----------------
 
@@ -13,6 +14,9 @@ Getting Started
 
 About
 ----------------
+
+`Get Basestack <https://github.com/jhuapl-bio/Basestack/>`_
+
 
 .. image:: ../assets/img/homepage.png
    :width: 600

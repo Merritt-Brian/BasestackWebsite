@@ -3,6 +3,8 @@
 Installation
 =====
 
+`Get The Latest Basestack Release <https://github.com/jhuapl-bio/Basestack/releases/latest>`_
+
 .. _windows_docker:
 
 Windows
