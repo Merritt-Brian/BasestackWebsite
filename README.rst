@@ -31,8 +31,8 @@ Development (Local Builds)
 
 ```
 
-conda env create -f environment.yml
-conda activate basestack-website-dev
+conda env create -f environment.yml;
+conda activate basestack-website-dev;
 sphinx-autobuild -a docs/source docs/_build/html --watch docs
 
 ```
