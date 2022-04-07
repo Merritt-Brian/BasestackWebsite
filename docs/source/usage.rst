@@ -32,6 +32,7 @@ Modules
    vadr
    samtools
    unicycler
+   metagenomic_triage
 
 
 .. _supplemental_software:
