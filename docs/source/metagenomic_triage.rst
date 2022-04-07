@@ -2,4 +2,4 @@ Metagenomics Triage Workflow (Under Construction)
 -----
 
 .. warning:: 
-   Under Construction
+   This module is under construction
