@@ -16,6 +16,7 @@ Modules
 .. toctree::
    pavian
    mytax
+   mytax2
    basestack_consensus
    nextstrain
    igv
