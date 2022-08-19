@@ -96,3 +96,39 @@ Parameters
 -------
 Returns
 -------
+
+1. Barcode Folders OPTIONAL. This will only be generated if you input a run in the data sheet and opt to set barcoding (demux) on it from the Data Sheet view
+2. Kraken2 Classifiction Reports. Each will be output in the same folder as the sample of interest as full.report. Full.report is the aggregation of all reports for all fastqs attributed to a sample
+
+
+-------
+Display
+-------
+
+.. image:: ../assets/img/Mytaxv2_basestack.png 
+   :width: 100%
+
+If you need to edit a specific field directly within the UI, you can do so by selecting the pencil icon or adding a New Item
+
+.. image:: ../assets/img/Mytaxv2_edititem.png 
+   :width: 100%
+
+Within the dashboard, you can view all reports being generated in real time as the sunburst, sankey, table, or tops tab. These will be automatically 
+started as soon as you access the website url and basestack has loaded the model as running.
+
+.. image:: ../assets/img/Mytaxv2_dashboard.png 
+   :width: 100%
+
+.. warning:: 
+   If the app doesn't start automatically classifying, try to refresh the page
+
+
+At the top of the page on the right, you can adjust your samplesheet. 
+
+
+.. warning::
+    If run with Basestack, this will be limited in scope since you are running on data mounted with Docker.
+    Any changes must be made with Basestack regarding adjusting data that is to be seen not from the Data Sheet directly. 
+
+.. image:: ../assets/img/Mytaxv2_datasheet.png 
+   :width: 100%
