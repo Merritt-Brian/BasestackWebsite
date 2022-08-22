@@ -67,22 +67,22 @@ Parameters
      
    * - covid_run
      - fastq_pass
-     - NULL
+     - 
      - run
      - oxford
-     - NULL
-     - NULL
+     - 
+     - 
      - barcode[0-9]+
      - EXP-NBD103
    * - NB03
      - ./NB11
-     - NULL
+     - 
      - directory
      - oxford
      - minikraken2
      - FALSE
-     - NULL
-     - NULL
+     - 
+     - 
    * - ERR123
      - ERR123_R1.fastq.gz
      - ERR123_R2.fastq.gz
@@ -90,8 +90,8 @@ Parameters
      - illumina
      - flukraken2
      - TRUE
-     - NULL
-     - NULL
+     - 
+     - 
 
 -------
 Returns
