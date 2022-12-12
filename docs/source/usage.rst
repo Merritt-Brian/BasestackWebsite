@@ -24,6 +24,7 @@ Modules
    rampart
    fastqc
    nanoplot
+   viral_recon
    bamstats
    artic
    ivar
