@@ -15,6 +15,7 @@ Modules
 
 .. toctree::
    pavian
+   ncbi_scrubber
    mytax
    mytax2
    basestack_consensus
