@@ -72,7 +72,7 @@ Choose **ONE** option
 			- **1.** ``sudo sed -i "1s/^/$USER:$(id -u):1\n/" /etc/subuid``
 			- **2.** ``sudo sed -i "1s/^/$USER:$(id -g):1\n/" /etc/subgid``
 		4. Create Docker container namespace **CHOOSE ONE**
-			- **a.** `echo "{\"userns-remap\": \"$USER\"}" | sudo tee -a /etc/docker/daemon.json`
+			- **a.** `echo $(jq --arg user "$USER" '. += {"userns-remap": $user}' /etc/docker/daemon.json) > ~/daemon.json && sudo mv ~/daemon.json /etc/docker/daemon.json`
 				- If you dont have the file already created (isn't created by default)
 			- **b.** Manually add your user by following the instructions here: https://docs.docker.com/engine/security/userns-remap/.
 				- You can disable the `userns-remap` functionality by deleting the `daemon.json` file described above or removing the line attributed to your user
